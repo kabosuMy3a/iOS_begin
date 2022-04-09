@@ -1,10 +1,3 @@
-//
-//  main.swift
-//  1000
-//
-//  Created by 홍순규 on 2022/04/08.
-//
-
 import Foundation
 
 /*
@@ -139,4 +132,36 @@ for (s, nums) in interestingNumbers {
 }
 print(largest);
 
+func calculators(scores: [Int]) -> (min: Int, max: Int, sum: Int){
+    var min = scores[0];
+    var max = scores[0];
+    var sum = 0 ;
+    return (min, max, sum);
+}
+print(calculators(scores: [1,2,3,4]).min);
 
+///함수와 클로저
+func makeIncrement() -> ((Int) -> Int){
+    func addOne(number : Int) -> Int {
+        return 1 + number;
+    }
+    return addOne ;
+}
+
+
+var increment = makeIncrement();
+print(increment(7));
+
+var a = 0 ;
+print(a^1);
+///- 함수와 클로저
+
+/* 나눗셈
+var ans : Set<Int> = Set<Int>();
+for _ in 0..<10 {
+    let a = Int(readLine()!.split(separator: " ")[0])!
+    ans.insert(a % 42);
+}
+print(ans.count);
+*/
+///- 나눗셈 백준 브론즈 2
