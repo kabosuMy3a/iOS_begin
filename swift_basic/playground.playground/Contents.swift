@@ -69,3 +69,24 @@ case 20...:
 default:
     print("온도 입력");
 }
+
+var OptionalName : String? = nil
+var name = OptionalName ?? "Anonymous"
+
+func test(number n : Int?) -> Void {
+    var number : Int? = n;
+    guard let result  = number else {return}
+    print(result);
+}
+
+test(number: nil);
+test(number: 5);
+
+let string = "12a";
+var stringToInt: Int? = Int(string);
+print(stringToInt ?? 0 + 1);
+if stringToInt != nil { print(stringToInt!) } else {print("love")}
+
+//구조체는 값, 클래스는 참조 
+
+

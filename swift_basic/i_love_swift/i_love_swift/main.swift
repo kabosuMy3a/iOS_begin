@@ -165,3 +165,72 @@ for _ in 0..<10 {
 print(ans.count);
 */
 ///- 나눗셈 백준 브론즈 2
+
+///black jack bronze 2
+/*
+let first_line  = readLine()!.split(separator: " ");
+let N = Int(first_line[0])!; let M = Int(first_line[1])! ;
+let nums = readLine()!.split(separator: " ").map({Int($0)!});
+
+var ans = 0;
+for i in 0..<nums.count {
+    if i+1 >= nums.count {continue;}
+    for j in i+1..<nums.count {
+        if j+1 >= nums.count {continue;}
+        for k in j+1..<nums.count {
+            let sum = nums[i] + nums[j] + nums[k] ;
+            var prev : Int ; var cur : Int ;
+            prev = M - ans ;
+            if sum <= M  {
+                cur = M - sum ;
+                if cur < prev { ans = sum ;}
+            }
+        }
+    }
+}
+
+print(ans);
+ */
+///-black jack bronze 2
+
+///-x,y sorting boj 11651
+/*
+let N = Int(readLine()!)!;
+var positions : [(x: Int, y: Int)] = [];
+for _ in 0..<N {
+    let line = readLine()!.split(separator: " ");
+    positions.append((Int(line[0])!, Int(line[1])!));
+}
+            
+//positions.sort{$0.y == $1.y ? $0.x < $1.x : $0.y < $1.y} ;
+
+positions.sort(by: {
+        if $0.y == $1.y {
+            return $0.x < $1.x
+        } else {
+            return $0.y < $1.y
+        }
+})
+
+for i in 0..<N {
+    print(positions[i].x,terminator: " ");
+    print(positions[i].y);
+}
+*/
+/// -x,y sorting boj 11651
+
+///동전 0 - s3
+let l = readLine()!.split(separator: " ");
+let N = Int(l[0])! ; var K = Int(l[1])! ;
+var coins : [Int] = [];
+for _ in 0..<N{
+    coins.append(Int(readLine()!)!);
+}
+coins.reverse(); var ans = 0 ;
+for coin in coins {
+    ans += K / coin ;
+    K %= coin ;
+}
+print(ans);
+
+///-
