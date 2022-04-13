@@ -220,6 +220,7 @@ for i in 0..<N {
 /// -x,y sorting boj 11651
 
 ///동전 0 - s3
+/*
 let l = readLine()!.split(separator: " ");
 let N = Int(l[0])! ; var K = Int(l[1])! ;
 var coins : [Int] = [];
@@ -232,5 +233,33 @@ for coin in coins {
     K %= coin ;
 }
 print(ans);
+*/
+///-
+
+///물병 - s1
+
+let line  = readLine()!.split(separator: " ");
+var N = Int(line[0])! ; let K = Int(line[1])!;
+
+var cur = N ;
+while true {
+    var cnt = 0 ;
+    let bin : String = String(cur, radix: 2);
+    for c in bin {
+        if c == "1" {cnt += 1;}
+    }
+    
+    if cnt <= K {
+        print(cur - N);
+        exit(0);
+        /*
+         https://zeddios.tistory.com/1252
+         앱을 예쁘게 종료하기
+         */
+    }
+    
+    cur += cur & (-cur) ;
+}
+
 
 ///-
