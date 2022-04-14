@@ -237,7 +237,7 @@ print(ans);
 ///-
 
 ///물병 - s1
-
+/*
 let line  = readLine()!.split(separator: " ");
 var N = Int(line[0])! ; let K = Int(line[1])!;
 
@@ -260,6 +260,21 @@ while true {
     
     cur += cur & (-cur) ;
 }
-
+*/
 
 ///-
+
+/// 문자열 반복 b2
+let T = Int(readLine()!)!;
+for _ in 0..<T {
+    let line = readLine()!.split(separator: " ");
+    let R = Int(line[0])!; let str = line[1];
+    for c in str {
+        for _ in 0..<R {
+            print(c, terminator: "");
+        }
+    }
+    print();
+}
+///-
+
