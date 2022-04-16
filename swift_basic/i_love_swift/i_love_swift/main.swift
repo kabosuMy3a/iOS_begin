@@ -265,6 +265,7 @@ while true {
 ///-
 
 /// 문자열 반복 b2
+/*
 let T = Int(readLine()!)!;
 for _ in 0..<T {
     let line = readLine()!.split(separator: " ");
@@ -276,5 +277,30 @@ for _ in 0..<T {
     }
     print();
 }
+*/
 ///-
 
+/// 모독 g5
+let N = Int(readLine()!)!;
+var arr : [Int] = Array(repeating: 0, count: N + 1);
+for i in 1...N {
+    arr[i] = Int(readLine()!)! ;
+}
+arr.sort(by: {$0 < $1});
+
+var ans = 0 ;
+var defile_angle = 1 ; var prev_processed : Int = 0 ;
+for i in 1...N {
+    let cur = arr[i] ;
+    if cur == prev_processed {continue;}
+    
+    if defile_angle < cur {
+        ans += cur - defile_angle ;
+    }
+    
+    prev_processed = defile_angle ;
+    defile_angle += 1 ;
+}
+
+print(ans);
+///-
